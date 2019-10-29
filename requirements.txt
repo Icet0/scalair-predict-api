@@ -5,8 +5,6 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 Werkzeug==0.15.6
-numpy==1.13.3
-numpydoc==0.7.0
 pandas==0.20.3
 ply==3.10
 scikit-image==0.13.0
