@@ -10,6 +10,7 @@ RUN pip install -qr /tmp/requirements.txt
 ADD ./webapp /opt/webapp/
 WORKDIR /opt/webapp
 
+RUN pip install --upgrade pip
 RUN conda install numpy
 RUN conda install scipy
 RUN conda install scikit-learn
