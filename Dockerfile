@@ -10,6 +10,8 @@ RUN pip install -qr /tmp/requirements.txt
 ADD ./webapp /opt/webapp/
 WORKDIR /opt/webapp
 
+RUN conda install -c conda-forge numpy
+RUN conda install scipy
 RUN conda install scikit-learn
 RUN conda install pandas
 RUN pip install pickle-mixin
