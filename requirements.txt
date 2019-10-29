@@ -4,7 +4,7 @@ Jinja2
 Werkzeug
 distribute
 wsgiref
-alabaster==0.7.10gunicorn
+alabaster==0.7.10
 conda==4.7.12
 conda-build==3.0.27
 conda-package-handling==1.6.0
