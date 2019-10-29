@@ -7,8 +7,8 @@ ADD ./webapp/requirements.txt /tmp/requirements.txt
 RUN pip install -qr /tmp/requirements.txt
 
 # Add our code
-ADD ./webapp /opt/webapp/
-WORKDIR /opt/webapp
+ADD ./webapp /opt/
+WORKDIR /opt/
 
 RUN conda install scikit-learn
 
