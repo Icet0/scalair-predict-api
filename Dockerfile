@@ -12,7 +12,6 @@ RUN pip install -qr /tmp/requirements.txt
 ADD ./webapp /opt/webapp/
 WORKDIR /opt/webapp
 
-RUN pip --upgrade pip
 RUN conda install scikit-learn
 RUN pip install pickle-mixin	
 
