@@ -3,13 +3,30 @@ from flask import request, jsonify
 from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
 from sklearn.model_selection import train_test_split # Import train_test_split function
 from sklearn import metrics #Import scikit-learn metrics module for accuracy calculation
+from lib2to3.fixes.fix_imports import MAPPING
+import sys
 import pickle 
 
 app = Flask(__name__)
 
 app.config["DEBUG"] = True
 
+#########################################################################
 
+# MAPPING maps Python 2 names to Python 3 names. We want this in reverse.
+REVERSE_MAPPING = {}
+for key, val in MAPPING.items():
+    REVERSE_MAPPING[val] = key
+# We can override the Unpickler and loads
+class Python_3_Unpickler(pickle.Unpickler):
+    def find_class(self, module, name):
+        if module in REVERSE_MAPPING:
+            module = REVERSE_MAPPING[module]
+        __import__(module)
+        mod = sys.modules[module]
+        klass = getattr(mod, name)
+        return klass
+#########################################################################
 class Prevention:
     vent = 0.0
     nom = 0
@@ -27,7 +44,10 @@ class Prevention:
         #filename = 'SaveModelOrange.pkcls'
         filename = 'finalized_model.sav'
         loaded_model = pickle.load(open(filename, 'rb'))
-        return loaded_model.predict(data)
+        #return loaded_model.predict(data)
+        with open('data.pkl', 'rb') as file_:
+            data = Python_3_Unpickler(file_).load()
+        return data
 
 
 
