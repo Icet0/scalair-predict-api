@@ -7,7 +7,6 @@ RUN /opt/conda/bin/conda update conda -y
 RUN /opt/conda/bin/conda install nomkl -y
 
 
-# Install python and pip
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
