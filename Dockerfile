@@ -8,12 +8,13 @@ ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
 RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
+RUN pip3 install --upgrade pip
 
 # Add our code
 ADD ./webapp /opt/webapp/
 WORKDIR /opt/webapp
 
-RUN conda install scikit-learn
+RUN pip install scikit-learn
 RUN pip install pickle-mixin	
 
 # Run the image as a non-root user
