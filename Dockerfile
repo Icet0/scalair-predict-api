@@ -8,7 +8,6 @@ RUN /opt/conda/bin/conda install nomkl -y
 
 
 # Install python and pip
-RUN apk add --no-cache --update python3 py3-pip bash
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
