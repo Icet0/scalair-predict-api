@@ -20,9 +20,7 @@ WORKDIR /opt/webapp
 RUN pip install scikit-learn
 RUN pip install pickle-mixin	
 
-# Run the image as a non-root user
-RUN adduser -D myuser
-USER myuser
+
 
 # Run the app.  CMD is required to run on Heroku
 # $PORT is set by Heroku			
