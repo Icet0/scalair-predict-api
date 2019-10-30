@@ -14,8 +14,10 @@ WORKDIR /opt/webapp
 RUN pip install --upgrade pip
 #RUN conda install numpy
 #RUN conda install scipy
+RUN sudo apt-get install python-numpy python-dev
+
 RUN conda install scikit-learn
-#RUN conda install pandas
+RUN conda install pandas
 RUN pip install pickle-mixin
 #RUN pip uninstall numpy
 #RUN pip install numpy
