@@ -17,9 +17,10 @@ RUN pip install --upgrade pip
 #RUN apt-get install python-numpy python-dev
 
 RUN conda install scikit-learn
+RUN conda install -c anaconda numpy 
 RUN conda install pandas
 RUN pip install pickle-mixin
-RUN pip uninstall numpy
+
 #RUN pip install numpy
 
 
