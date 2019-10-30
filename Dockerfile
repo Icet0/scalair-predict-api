@@ -13,7 +13,7 @@ WORKDIR /opt/webapp
 
 RUN pip install --upgrade pip
 RUN conda install numpy
-RUN conda install scipy
+#RUN conda install scipy
 RUN conda install scikit-learn
 RUN conda install pandas
 RUN pip install pickle-mixin
