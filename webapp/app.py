@@ -1,7 +1,5 @@
 from flask import Flask
 from flask import request, jsonify
-import numpy as np
-import pandas as pd
 from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
 from sklearn.model_selection import train_test_split # Import train_test_split function
 from sklearn import metrics #Import scikit-learn metrics module for accuracy calculation
@@ -25,12 +23,11 @@ class Prevention:
 
         # initialize list of lists 
         data = [[self.vent,self.nom,self.direction]] 
-        # Create the pandas DataFrame 
-        test = pd.DataFrame(data, columns = ['ventMax','nom','direction'])
+        # Create the pandas DataFrame
         #filename = 'SaveModelOrange.pkcls'
         filename = 'finalized_model.sav'
         loaded_model = pickle.load(open(filename, 'rb'))
-        return loaded_model.predict(test)
+        return loaded_model.predict(data)
 
 
 
