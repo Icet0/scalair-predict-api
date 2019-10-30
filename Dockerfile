@@ -1,6 +1,11 @@
 #FROM heroku/miniconda# Grab requirements.txt.ADD ./webapp/requirements.txt /tmp/requirements.txt# Install dependenciesRUN pip install -qr /tmp/requirements.txt# Add our codeADD ./webapp /opt/webapp/WORKDIR /opt/webappRUN conda install scikit-learnRUN pip install pickle-mixinCMD gunicorn --bind 0.0.0.0:$PORT wsgi
 #Grab the latest alpine image
-FROM alpine:latest
+FROM continuumio/miniconda3:latest
+RUN /opt/conda/bin/conda update conda -y
+
+# Disable Intel optimizations (takes a lot of extra space). (tnx kennethreitz)
+RUN /opt/conda/bin/conda install nomkl -y
+
 
 # Install python and pip
 RUN apk add --no-cache --update python3 py3-pip bash
