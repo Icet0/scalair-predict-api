@@ -43,9 +43,9 @@ class Prevention:
         # Create the pandas DataFrame
         #filename = 'SaveModelOrange.pkcls'
         filename = 'finalized_model.sav'
-        loaded_model = pickle.load(open(filename, 'rb'))
+        #loaded_model = pickle.load(open(filename, 'rb'))
         #return loaded_model.predict(data)
-        with open('data.pkl', 'rb') as file_:
+        with open('finalized_model.sav', 'rb') as file_:
             data = Python_3_Unpickler(file_).load()
         return data
 
