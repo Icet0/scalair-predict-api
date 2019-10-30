@@ -14,7 +14,6 @@ RUN pip3 install --upgrade pip
 ADD ./webapp /opt/webapp/
 WORKDIR /opt/webapp
 
-RUN pip install numpy
 RUN pip install scikit-learn
 RUN pip install pickle-mixin	
 
