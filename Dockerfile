@@ -19,5 +19,6 @@ RUN conda install pandas
 RUN pip install pickle-mixin
 #RUN pip uninstall numpy
 #RUN pip install numpy
+RUN conda update -n env_name -c defaults numpy
 
 CMD gunicorn --bind 0.0.0.0:$PORT wsgi
