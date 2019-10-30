@@ -10,8 +10,8 @@ RUN /opt/conda/bin/conda install nomkl -y
 ADD ./webapp/requirements.txt /tmp/requirements.txt
 
 # Install dependencies
-RUN pip3 install --no-cache-dir -q -r /tmp/requirements.txt
-RUN pip3 install --upgrade pip
+#RUN pip install --no-cache-dir -q -r /tmp/requirements.txt
+#RUN pip install --upgrade pip
 
 # Add our code
 ADD ./webapp /opt/webapp/
