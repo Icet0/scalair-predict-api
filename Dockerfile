@@ -3,7 +3,7 @@ FROM heroku/cedar:14
 
 ENV PORT 3000
 # Which version of Python?
-ENV PYTHON_VERSION python-3.4.2
+ENV PYTHON_VERSION python-3.6.9
 
 # Add Python binaries to path.
 ENV PATH /app/.heroku/python/bin/:$PATH
