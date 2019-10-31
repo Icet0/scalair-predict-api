@@ -14,4 +14,6 @@ RUN pip install -r requirements.txt
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+#CMD ["python", "app.py"]
+
+CMD gunicorn --bind 0.0.0.0:$PORT wsgi
